@@ -12,4 +12,4 @@ def s1():
 @app.route("/s2")
 def s2():
     return render_template("s2.html")
-app.run(debug=True)
+app.run(host="0.0.0.0")
