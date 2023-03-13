@@ -5,6 +5,14 @@ app=Flask(__name__)
 def h():
     return render_template("index.html")
 
+@app.route('/sitemap.xml')
+def sitemap():
+     return render_template('sitemap.xml')
+
+@app.route("/robots.txt")
+def robots():
+     return render_template("robots.txt")
+
 @app.route("/s1")
 def s1():
         return redirect("https://drive.google.com/drive/folders/1Mn-p3Xtb0knsjWKU7n8h2pCqam3r_K3C?usp=sharing", code=302)
