@@ -4,4 +4,4 @@ Disallow: /nogooglebot/
 User-agent: *
 Allow: /
 
-Sitemap: https://gdvic.github.io/sitemap.xml
+Sitemap: https://siet-exams.onrender.com/sitemap.xml
