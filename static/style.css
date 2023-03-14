@@ -1,3 +1,9 @@
+html,
+body{
+width:100%;
+overflow-x:hidden;
+}
+
 .button-85 {
   padding: 0.6em 2em;
   border: none;
