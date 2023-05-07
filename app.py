@@ -13,11 +13,18 @@ def sitemap():
 def robots():
      return render_template("robots.txt")
 
+@app.route("/exams")
+def base_temp():
+    return render_template("/base.html")
 @app.route("/s1")
 def s1():
         return redirect("https://drive.google.com/drive/folders/1Mn-p3Xtb0knsjWKU7n8h2pCqam3r_K3C?usp=sharing", code=302)
 
+@app.route("/feedback")
+def feedback():
+    return render_template("/feedback.html")
 @app.route("/s2")
 def s2():
     return redirect("https://drive.google.com/drive/folders/1ISC0C_-ub0rEknT9DcG0Rgu-keUPJPVh?usp=sharing",code=302)
-app.run(host="0.0.0.0")
+
+app.run(host="0.0.0.0",debug=True)
