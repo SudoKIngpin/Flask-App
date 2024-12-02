@@ -26,7 +26,7 @@
 <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link href="/static/style.css" rel="stylesheet">
-<script src="/static/script.js"></script>
+<!-- <script src="/static/script.js"></script> -->
 <link rel="icon" type="image/x-icon" href="/static/fav.ico">
 <link rel="shortcut icon" type="image/png" href="/static/fav.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,25 +39,244 @@
   rel="stylesheet">
 
 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+
+
+    body {
+      margin: 0px;
+      padding: 0px;
+      box-sizing: border-box;
+
+      font-family: "Ubuntu";
+    }
+
+    .containeri {
+      font-family: Ubuntu Mono;
+
+      color: whitesmoke;
+      font-size: 1.6rem;
+      display: inline;
+      margin-left: 1.1em;
+    }
+
+    .cursor {
+
+      color: #1afdc6;
+      display: inline-block;
+      font-family: Ubuntu Mono;
+      font-weight: 700;
+      /* Use 300, 400, 500, or 700 as needed */
+      width: 7px;
+      background-color: #1afdc6;
+      animation: blink 0.7s steps(2, start) infinite;
+    }
+
+    @keyframes blink {
+      50% {
+        background-color: #1afdc6;
+      }
+    }
+
+
+
+
+
+    #feedback-btn {
+      transform: scale(0.8);
+      background-color: #1afdc6;
+      color: #1A202C;
+      border: 2px solid white;
+    
+    }
+
+    #feedback-btn:hover{
+      box-shadow: 0px 0px 3px 4px #22e8b7;
+      border: 3px solid white;
+
+      transform: scale(0.9);
+      transition: all .24s ease-out;
+
+    }
+
+    .btn-title:hover {
+      box-shadow: 0px 0px 3px 4px #22e8b7;
+      border: 3px solid white;
+
+      transform: scale(0.9);
+      transition: all .24s ease-out;
+      transform: scale(1.08);
+     /* Adjust the scale for the zoom effect */
+    }
+
+
+
+
+    #reactor {
+      border: 2px solid white;
+      border-radius: 50%;
+
+      animation: blinkreact 3.4s  infinite ease-in;
+
+
+      /* box-shadow: 0px 0px 3px 4px #1afdc6; */
+      /* Horizontal offset, Vertical offset, Blur radius, Spread radius, Color */
+
+    }
+
+    
+    @keyframes blinkreact {
+      3% {
+        background-color: #aef9e6;
+      }
+    }
+
+
+
+    #footerpicbox {
+      border: 2px solid white;
+      border-radius: 50%;
+
+
+    }
+
+    #footerpicbox:hover {
+      box-shadow: 0px 0px 2px 4px #1afdc6;
+      /* Horizontal offset, Vertical offset, Blur radius, Spread radius, Color */
+      transition: all .4s ease-out;
+      transform: scale(1.24);
+      /* Adjust the scale for the zoom effect */
+    }
+
+
+    body {
+      font-family: 'Open Sans', sans-serif;
+      font-size: 27px;
+    }
+
+    .btn-title {
+
+      font-family: Ubuntu Sans ;
+      font-weight: 500;
+      border: 3.7px solid white;
+      background-color: #aef9e6;
+      /* background-color:  #1afdc6; */
+      border-radius: 3%;
+      padding: 7px;
+      margin-left: 20px;
+      color: #1A202C;
+      animation: blink 3.4s  infinite ease-in;
+
+
+
+    }
+
+    a {
+
+      font-family: ubuntu sans;
+      font-weight: 750;
+    }
+
+    table,
+    td,
+    th {
+      border: 1px solid #fff;
+      border-collapse: collapse;
+      background-color: #a7a8a3
+    }
+
+
+    .fa {
+      padding: 20px;
+      font-size: 30px;
+      width: 60px;
+      text-align: center;
+      text-decoration: none;
+      margin: 5px 3px;
+
+    }
+
+    .fa:hover {
+      opacity: .7
+    }
+
+    .fa-facebook {
+      background: #3b5998;
+      color: #fff
+    }
+
+    .fa-linkedin {
+      background: #007bb5;
+      color: #fff
+    }
+
+    .fa-whatsapp {
+      background: #05d340c8;
+      color: #fff
+    }
+
+    .fa-youtube {
+      background: #b00;
+      color: #fff
+    }
+
+    .fa-instagram {
+      /* color: #fff;
+              background: #e20d94cb */
+
+      background: #f09433;
+      background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+      filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
+
+    }
+
+    .fa-twitter {
+      background: #55acee;
+      color: #fff
+    }
+  </style>
+
+
+
+
+
+
+
+
+
+
+
+
 <body>
 
-  <header class="text-gray-400 bg-gray-900 body-font">
+  <header class="text-gray-400 bg-gray-900 body-font border-b-4 border-[1afdc6]">
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
       <a class="flex title-font font-medium items-center text-white mb-4 md:mb-0">
 
-        <a href="/static/scripty.exe"><img src="/static/arc-removebg-preview-modified.png" loading="eager" alt="logo"
-            height="140" width="80"> </a>
+        <a href="/">
+          <div id="reactor">
+            <img src="/static/arc-removebg-preview-modified.png" loading="eager" alt="logo" height="100" width="40">
+            <!-- 140v80c -->
+          </div>
+        </a>
         <!-- <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="w-10 h-10 text-white p-2 bg-green-500 rounded-full" viewBox="0 0 24 24">
           <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
         </svg> -->
         <br>
-        <span class="ml-3 text-xl">$: WELCOME .....</span>
+        <!-- <span class="ml-3 text-xl">$: WELCOME .....</span> -->
+        <div class="containeri">
+          <span id="text"></span><span class="cursor">|</span>
+        </div>
         <br>
       </a>
       <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
       </nav>
-      <button class="text-white bg-green-500 border-0 py-3 px-6 focus:outline-none hover:bg-green-600 rounded text-lg"><a 
-          href="/feedback" target="_blank"> Feeback here </a>
+      <button id="feedback-btn"
+        class="text-white bg-green-500 border-0 py-3 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
+        <a href="/feedback" target="_blank"> Feeback here !
+        </a>
         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
           class="w-4 h-4 ml-1" viewBox="0 0 24 24">
           <path d="M5 12h14M12 5l7 7-7 7"></path>
@@ -68,19 +287,9 @@
   <!-- HESAAAADDDDDDDDDDDEEEEEEEERRRRRRRRRRRRRR -->
 
 
-  <style>
-#footerpicbox{
-  border: 2px solid white;
-  border-radius: 50%;
-
-}
 
 
-    body {
-      font-family: 'Open Sans', sans-serif;
-      font-size: 27px;
-    }
-  </style>
+
   <header class="text-gray-400 bg-gray-900 body-font">
 
     <div class="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -88,10 +297,14 @@
         <footer class="text-white-400 bg-gray-900 body-font">
           <div class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col">
             <a href="#" class="flex title-font font-medium items-center md:justify-start justify-center text-white">
-              <img src="https://fnew.oyer.in/1/company_document/002_com_doc_1612059294-29263.png" loading="eager"
-                alt="logo" height="140" width="80">
-              <span class="ml-3 text-xl">Shambhunath Institute of Engineering Technology </span></a>
-            <span class="ml-3 text-xl"> SIET Sessional Papers </span>
+              <div class="logo">
+                <img src="/static/fav.png" loading="eager" alt="logo" height="160" width="100" id="clogo">
+              </div>
+              <span class="ml-3 text-xl"
+                style="text-decoration: underline;font-size:1em;text-align: left;text-transform: capitalize;">Shambhunath
+                Institute of Engineering Technology </span>
+            </a>
+            <span class="ml-3 text-xl" style="font-size: .7em;;"> SIET Sessional Papers </span>
 
       </a>
       <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
@@ -99,102 +312,10 @@
 
 
 
-
-        <style>
-
-
-.btn-title{
-  font-family: ubuntu;
-  font-weight: 500;
-  font-style: italic;
-  border: 3px solid  white;
-  background-color: #dc2743;
-  /* background-color:  #1afdc6; */
-
-  padding: 7px ;
-  margin-left: 20px;
-  color: white;
-  
-
-}
-
-a{
-
-  font-family: ubuntu sans;
-  font-weight: 7=500;
-}
-          table,
-          td,
-          th {
-            border: 1px solid #fff;
-            border-collapse: collapse;
-            background-color: #a7a8a3
-          }
-
-
-          .fa {
-            padding: 20px;
-            font-size: 30px;
-            width: 60px;
-            text-align: center;
-            text-decoration: none;
-            margin: 5px 3px;
-            
-          }
-
-          .fa:hover {
-            opacity: .7
-          }
-
-          .fa-facebook {
-            background: #3b5998;
-            color: #fff
-          }
-
-          .fa-linkedin {
-            background: #007bb5;
-            color: #fff
-          }
-
-          .fa-whatsapp {
-            background: #05d340c8;
-            color: #fff
-          }
-
-          .fa-youtube {
-            background: #b00;
-            color: #fff
-          }
-
-          .fa-instagram {
-            /* color: #fff;
-              background: #e20d94cb */
-
-            background: #f09433;
-            background: -moz-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f09433', endColorstr='#bc1888', GradientType=1);
-
-          }
-
-          .fa-twitter {
-            background: #55acee;
-            color: #fff
-          }
-
-
-
-
-
-      
-
-        </style>
-
         <a href="https://instagram.com/harsh_v03" class="fa fa-facebook" target="_blank"></a>
-        <a href="https://twitter.com/Harsh" class="fa fa-twitter" target="_blank"></a>
+        <a href="#" class="fa fa-twitter" target="_blank"></a>
         <a href="https://instagram.com/harsh_v03" class="fa fa-instagram" target="_blank"></a>
-        <a href="https://www.linkedin.com/in/dev-h-4ba56a229" class="fa fa-linkedin" target="_blank"></a>
+        <a href="https://www.linkedin.com/in/harsh-vk777" class="fa fa-linkedin" target="_blank"></a>
         <a href="https://wa.me/+918920388443" class="fa fa-whatsapp" target="_blank"></a>
         </nav>
 
@@ -207,11 +328,12 @@ a{
   </header>
 
 
-  <section class="text-gray-400 bg-gray-900 body-font">
+  <section class="text-gray-400 bg-gray-900 body-font border-b-4 border-[#1afdc6] py-10">
 
 
 
-    <p style="text-align:justify; font-family: cursive;font-weight: 200;font-size: large;color: white;" class="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base"> This platform has been
+    <p style="text-align:justify; font-family: cursive;font-weight: 200;font-size: large;color: white;"
+      class="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base"> This platform has been
       created to help the
       engineering students of SIET (Shambhunath Institute of Engineering and Technology) to help students clear their
       sessional exams with good marks and achieve good internals .
@@ -222,51 +344,51 @@ a{
     </p>
     <br>
     <br>
-<div class="yearbox">
-    <button class="btn-title" role="button">B.Tech (CSE) (Ist)</button>
-    <br>
-    <br>
-    <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4"><small>‎
-      </small>
-
-
-
-      <button class="button-85" role="button"> <a href="/s1">Sem-I (Sessional I )</a></button>
-
+    <div class="yearbox">
+      <button class="btn-title" role="button">B.Tech (CSE) (Ist)</button>
       <br>
       <br>
+      <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4"><small>‎
+        </small>
 
-    <div class="myclass">
 
-      <!-- <p class="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">A picture can say a thousand words. Keeping this in mind numerous pictures have been placed on our page . Hope you Enjoy !</p> -->
 
+        <button class="button-85" role="button"> <a href="/s1">Sem-I (Sessional I )</a></button>
+
+        <br>
+        <br>
+
+      <div class="myclass">
+
+        <!-- <p class="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">A picture can say a thousand words. Keeping this in mind numerous pictures have been placed on our page . Hope you Enjoy !</p> -->
+
+
+        <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4"><small>‎
+          </small>
+
+          <button class="button-85" role="button"><a href="/s2">Sem-I (Sessional II) </a></button>
+      </div>
 
       <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4"><small>‎
         </small>
 
-        <button class="button-85" role="button"><a href="/s2">Sem-I (Sessional II) </a></button>
+
+        <br>
+        <button class="button-85" role="button"> <a href="/exams" target="_blank">Sem-2 (Sessional I )</a></button>
+
+        <br>
+        <br>
+
+      <div class="myclass">
+
+
+        <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4"><small>‎
+          </small>
+
+          <button class="button-85" role="button"><a href="/exams">Sem-2( Sessional II) </a></button>
+      </div>
+
     </div>
-
-    <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4"><small>‎
-      </small>
-
-
-      <br>
-      <button class="button-85" role="button"> <a href="/exams" target="_blank">Sem-2 (Sessional I )</a></button>
-
-      <br>
-      <br>
-
-    <div class="myclass">
-
-
-      <p class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4"><small>‎
-        </small>
-
-        <button class="button-85" role="button"><a href="/exams">Sem-2( Sessional II) </a></button>
-    </div>
-
-  </div>
 
 
 
@@ -400,7 +522,18 @@ a{
 
       </div>
 
+
+
+      <div style="height: 100%;width: 100%;
+      background-color: #1A202C;">
+
+      </div>
+
   </section>
+
+
+
+
 
 
 
@@ -409,13 +542,15 @@ a{
       <a class="flex title-font font-medium items-center md:justify-start justify-center text-white">
         <a href="/static/scr.cmd">
           <div id="footerpicbox">
-          <img style="border-radius: 50%;" src="/static/vegeta.jpg" loading="eager" alt="logo" height="120"
-            width="60">
+            <img style="border-radius: 50%;" src="/static/vegeta.jpg" loading="eager" alt="logo" height="120"
+              width="60">
           </div>
-          </a>
-        <span style='font-family: cursive;font-weight:200;color: white;text-decoration: underline;' class="ml-3 text-xl"> Harsh </span>
+        </a>
+        <span style='font-family: cursive;font-weight:200;color: white;text-decoration: underline;'
+          class="ml-3 text-xl"> Harsh </span>
       </a>
-      <p style="font-family: cursive;font-size:medium; color: white;;"    class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4"> Made with
+      <p style="font-family: cursive;font-size:medium; color: white;;"
+        class="text-sm text-gray-400 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-800 sm:py-2 sm:mt-0 mt-4"> Made with
         ❤️ by Sudo Corporations © 2023
         <a href="https://www.linkedin.com/in/dev-h-4ba56a229" class="text-gray-500 ml-1" target="_blank"
           rel="noopener noreferrer"> @Harsh V.</a>
@@ -444,7 +579,7 @@ a{
             <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
           </svg>
         </a>
-        <a href='https://www.linkedin.com/in/dev-h-4ba56a229' class="ml-3 text-gray-400">
+        <a href='https://www.linkedin.com/in/harsh-vk777' class="ml-3 text-gray-400">
           <svg fill="currentColor" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="0"
             class="w-5 h-5" viewBox="0 0 24 24">
             <path stroke="none"
@@ -457,6 +592,7 @@ a{
   </footer>
 
 
+  <script src="/static/script.js"></script>
 
 </body>
 
