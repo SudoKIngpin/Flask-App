@@ -75,6 +75,6 @@ def papers(year):
     return render_template('papers.html', year=data)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', debug=True)
+    app.run(host='0.0.0.0')
 
 
