@@ -1,0 +1,76 @@
+/* General styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #1A202C; /* Background color */
+    color: #f0f0f0;
+  }
+  
+  .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .card {
+    background-color: #2D3748; /* Card background color */
+    border: 1px solid #4A5568;
+    border-radius: 8px;
+    width: calc(100% / 4 - 40px); /* 4 cards in a row with 20px gaps */
+    max-width: 300px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+  
+  .card h2 {
+    margin-top: 0;
+    font-size: 1.2em;
+    color: #1afdc6; /* Heading color */
+  }
+  
+  .card p {
+    font-size: .7em;
+    margin: 15px 0;
+    color: #E2E8F0;
+  }
+  
+  .card button {
+    background-color: #1afdc6; /* Button background color */
+    color: #1A202C; /* Button text color */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: .5em;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .card button:hover {
+    background-color: #16d3a5; /* Slightly darker hover effect */
+  }
+  
+  .card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 6px 10px #16d3a5;
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); */
+
+  }
+  
+  /* Responsive design */
+  @media (max-width: 768px) {
+    .card {
+      width: calc(100% / 2 - 20px); /* 2 cards in a row */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card {
+      width: 100%; /* 1 card in a row */
+    }
+  }
+  

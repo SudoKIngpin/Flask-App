@@ -1,0 +1,150 @@
+To dynamically update content and images in a Flask application based on the year selected by the user, you can use Flask routes and pass data to the template via the `render_template` function.
+
+Here’s a step-by-step solution:
+
+---
+
+### 1. Folder Structure
+Organize your Flask project as follows:
+
+```
+project/
+│
+├── static/
+│   ├── images/
+│   │   ├── first_year.png
+│   │   ├── second_year.png
+│   │   ├── third_year.png
+│   │   └── final_year.png
+│
+├── templates/
+│   ├── papers.html
+│
+├── app.py
+└── requirements.txt
+```
+
+---
+
+### 2. Flask Application Code
+```python
+from flask import Flask, render_template, request
+
+app = Flask(__name__)
+
+# Data for each year
+YEAR_DATA = {
+    "1st": {
+        "title": "First Year Papers",
+        "description": "Download papers for the first-year students.",
+        "image": "images/first_year.png",
+        "papers": ["Maths.pdf", "Physics.pdf", "Chemistry.pdf"]
+    },
+    "2nd": {
+        "title": "Second Year Papers",
+        "description": "Download papers for the second-year students.",
+        "image": "images/second_year.png",
+        "papers": ["Data Structures.pdf", "OOP.pdf", "DBMS.pdf"]
+    },
+    "3rd": {
+        "title": "Third Year Papers",
+        "description": "Download papers for the third-year students.",
+        "image": "images/third_year.png",
+        "papers": ["Operating Systems.pdf", "Algorithms.pdf", "Computer Networks.pdf"]
+    },
+    "4th": {
+        "title": "Final Year Papers",
+        "description": "Download papers for the final-year students.",
+        "image": "images/final_year.png",
+        "papers": ["Machine Learning.pdf", "Cloud Computing.pdf", "AI.pdf"]
+    }
+}
+
+@app.route('/')
+def home():
+    return render_template('papers.html', year=None)
+
+@app.route('/papers/<year>')
+def papers(year):
+    data = YEAR_DATA.get(year)
+    if not data:
+        return "Year not found", 404
+    return render_template('papers.html', year=data)
+
+if __name__ == '__main__':
+    app.run(debug=True)
+```
+
+---
+
+### 3. HTML Template (`papers.html`)
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Sessional Papers</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>College Sessional Exams</h1>
+
+    {% if year %}
+        <h2>{{ year.title }}</h2>
+        <p>{{ year.description }}</p>
+        <img src="{{ url_for('static', filename=year.image) }}" alt="Year Image" style="width: 300px;">
+        <h3>Available Papers:</h3>
+        <ul>
+            {% for paper in year.papers %}
+                <li><a href="/static/papers/{{ paper }}" download>{{ paper }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Select a year to view and download papers:</p>
+        <ul>
+            <li><a href="/papers/1st">First Year</a></li>
+            <li><a href="/papers/2nd">Second Year</a></li>
+            <li><a href="/papers/3rd">Third Year</a></li>
+            <li><a href="/papers/4th">Final Year</a></li>
+        </ul>
+    {% endif %}
+</body>
+</html>
+```
+
+---
+
+### 4. Explanation:
+1. **Dynamic Routing**:
+   - `/papers/<year>` dynamically serves data for the selected year.
+2. **Data Structure**:
+   - `YEAR_DATA` stores information (title, description, image, and paper list) for each year.
+3. **Template Logic**:
+   - The `papers.html` template uses Jinja2 syntax to populate the content dynamically.
+4. **Static Files**:
+   - Images and downloadable papers are stored in the `static/` folder for easy access.
+
+---
+
+### 5. Test It
+- Run the Flask app:
+  ```bash
+  python app.py
+  ```
+- Visit:
+  - Homepage: `http://127.0.0.1:5000/`
+  - First Year Papers: `http://127.0.0.1:5000/papers/1st`
+  - Similarly for other years.
+
+---
+
+
+
+
+
+
+
+
+
+2nd year : sem 5 sessional II onwards.............................

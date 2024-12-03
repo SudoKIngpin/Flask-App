@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ year.title if year else "College Sessional Papers" }}</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-gray-200 font-sans">
+    <!-- Header Section -->
+    <header class="bg-gray-800 py-6 shadow-md">
+        <div class="container mx-auto text-center">
+            <h1 class="text-3xl font-bold tracking-wide">
+                {{ year.title if year else "College Sessional Exams" }}
+            </h1>
+        </div>
+    </header>
+
+    <!-- Content Section -->
+    <main class="container mx-auto px-4 py-8">
+        {% if year %}
+            <!-- Year-Specific Content -->
+            <div class="flex flex-col md:flex-row items-center gap-6">
+                <!-- Image Section -->
+                <div class="flex-shrink-0">
+                    <img src="{{ url_for('static', filename=year.image) }}" alt="{{ year.title }} Image"
+                         class="rounded-full shadow-lg w-48 h-48 object-cover border-4 border-[#1afdc6]">
+                </div>
+                <!-- Text Section -->
+                <div class="flex-1">
+                    <h2 class="text-2xl font-semibold">{{ year.title }}</h2>
+                    <p class="mt-2 text-gray-400">{{ year.description }}</p>
+                </div>
+            </div>
+
+            <!-- Subjects List -->
+            <section class="mt-8">
+                <h3 class="text-xl font-semibold text-[#1afdc6]">Subjects:</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
+                    {% for subject in year.subjects %}
+
+
+
+                    <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition duration-300 flex flex-col items-center">
+                        <!-- Subject Name -->
+                        <h4 class="text-lg font-bold text-[#1afdc6] mb-4">{{ subject.name }}</h4>
+                        
+                        <!-- Buttons -->
+                        <a href="{{ subject.sessional1_link }}" 
+                           class="bg-[#1afdc6] text-gray-900 px-6 py-2 rounded shadow font-medium hover:bg-green-400 transition duration-300 mb-4 w-full text-center">
+                            Sessional 1
+                        </a>
+                        <a href="{{ subject.sessional2_link }}" 
+                           class="bg-[#1afdc6] text-gray-900 px-6 py-2 rounded shadow font-medium hover:bg-green-400 transition duration-300 w-full text-center">
+                            Sessional 2
+                        </a>
+                    </div>
+                    
+                        <!-- <div class="bg-gray-800 p-6 rounded-lg shadow hover:shadow-lg transition duration-300">
+                            <h4 class="text-lg font-bold text-[#1afdc6]">{{ subject.name }}</h4>
+                            <div class="mt-4 flex justify-between">
+                                <a href="{{ subject.sessional1_link }}" 
+                                   class="bg-[#1afdc6] text-gray-900 px-4 py-2 rounded shadow font-medium hover:bg-green-400 transition duration-300">
+                                    Sessional 1
+                                </a>
+                                <a href="{{ subject.sessional2_link }}" 
+                                   class="bg-[#1afdc6] text-gray-900 px-4 py-2 rounded shadow font-medium hover:bg-green-400 transition duration-300">
+                                    Sessional 2
+                                </a>
+                            </div>
+                        </div> -->
+                    {% endfor %}
+                </div>
+            </section>
+        {% else %}
+            <!-- Default View -->
+            <div class="text-center">
+                <p class="text-lg font-medium mb-6">Select a year to view and download sessional papers:</p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <a href="/papers/1st" class="bg-[#1afdc6] text-gray-900 px-6 py-3 rounded shadow font-semibold hover:bg-green-400 transition duration-300">First Year</a>
+                    <a href="/papers/2nd" class="bg-[#1afdc6] text-gray-900 px-6 py-3 rounded shadow font-semibold hover:bg-green-400 transition duration-300">Second Year</a>
+                    <a href="/papers/3rd" class="bg-[#1afdc6] text-gray-900 px-6 py-3 rounded shadow font-semibold hover:bg-green-400 transition duration-300">Third Year</a>
+                    <a href="/papers/4th" class="bg-[#1afdc6] text-gray-900 px-6 py-3 rounded shadow font-semibold hover:bg-green-400 transition duration-300">Final Year</a>
+                </div>
+            </div>
+        {% endif %}
+    </main>
+</body>
+</html>
