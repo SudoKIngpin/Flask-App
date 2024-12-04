@@ -36,7 +36,9 @@ YEAR_DATA = {
              {"name": "Digital Electronics", "sessional1_link": "/static/papers/1/2nd/de.jpg", "sessional2_link": "/static/papers/2/2nd/de.jpg"},
              {"name": "Computer Org. & Arch.", "sessional1_link": "/static/papers/1/2nd/coa.jpg", "sessional2_link": "/static/papers/2/2nd/coa.jpg"},
              {"name": "Discrete Maths", "sessional1_link": "/static/papers/1/2nd/dm.jpeg", "sessional2_link": "/static/papers/2/2nd/dm.jpg"},
+             {"name": "Operating System", "sessional1_link": "/static/papers/1/2nd/OS.pdf", "sessional2_link": "/static/papers/2/2nd/OS.pdf"},
              {"name": "Human Values", "sessional1_link": "/static/papers/1/2nd/uhv.jpg", "sessional2_link": "/static/papers/2/2nd/uhv.jpg"},
+             {"name": "Maths - IV", "sessional1_link": "/static/papers/1/2nd/M4.pdf", "sessional2_link": "/static/papers/2/2nd/M4.pdf"}
 
 
 
@@ -45,11 +47,21 @@ YEAR_DATA = {
     },
 
 
-    "3rd": {
+    "3rd": 
+    {
         "title": "Third Year Papers",
         "description": "Master advanced topics and prepare for internships and projects",
         "image": "images/3.png",
-        "subjects": ["Operating Systems.pdf", "Algorithms.pdf", "Computer Networks.pdf"]
+        "subjects":  [
+             
+            {"name": "Web  Technology", "sessional1_link": "/static/papers/1/3rd/Web.pdf", "sessional2_link": "/static/papers/2/3rdnd/"},
+             {"name": "Machine Learning", "sessional1_link": "/static/papers/1/3rd/Ml.jpg", "sessional2_link": "/static/papers/2/3rd/"},
+             {"name": "Data Analytics", "sessional1_link": "/static/papers/1/3rd/DA.jpg", "sessional2_link": "/static/papers/2/3rd/"},
+             {"name": "Algorithms", "sessional1_link": "/static/papers/1/3rd/DAA.pdf", "sessional2_link": "/static/papers/2/3rd/"},
+             {"name": "Constitution", "sessional1_link": "/static/papers/1/3rd/Const.jpg", "sessional2_link": "/static/papers/2/3rd/"}
+         
+  ]
+  
     },
 
 
