@@ -74,6 +74,11 @@ def papers(year):
         return "Year not found", 404
     return render_template('papers.html', year=data)
 
+
+@app.route("/feedback")
+def feedback():
+    return render_template("/feedback.html")
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0')
 
