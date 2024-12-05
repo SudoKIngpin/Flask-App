@@ -79,7 +79,7 @@ YEAR_DATA = {
 
 @app.route('/robots.txt')
 def robots_txt():
-    response = Response("User-agent: *\nDisallow:\nSitemap: https://siet-exams.onrender.com/sitemap.xml", mimetype='text/plain')
+    response = Response("User-agent: Googlebot\nDisallow:\nSitemap: https://siet-exams.onrender.com/sitemap.xml", mimetype='text/plain')
     return response
 
 
