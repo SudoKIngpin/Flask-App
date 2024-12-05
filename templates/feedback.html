@@ -5,39 +5,75 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
-
   <title>Feedback</title>
+  <style>
+    body {
+      background-color: #1A202C; /* Matches SIET Exams' dark theme */
+      color: #FFFFFF;
+    }
+    .btn-primary {
+      background-color: #1afdc6;
+      color: #1A202C;
+    }
+    .btn-primary:hover {
+      background-color: #17d1a5;
+    }
+    .input-field {
+      background-color: #2D3748;
+      color: #FFFFFF;
+      border: 1px solid #1afdc6;
+    }
+    .input-field:focus {
+      outline: none;
+      border-color: #1afdc6;
+      box-shadow: 0 0 0 3px rgba(26, 253, 198, 0.5);
+    }
+    .form-container {
+      background-color: #2D3748;
+      border: 1px solid #1afdc6;
+    }
+  </style>
 </head>
 <body>
-  
 
+<section class="relative">
+  <div class="absolute inset-0">
+    <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14412.3919356112!2d81.7531088!3d25.4349875!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399acccbb108cfeb%3A0xbd80419a93ea5550!2sShambhunath%20Institute%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1683424099756!5m2!1sen!2sin" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
+  </div>
+  <div class="container px-5 py-24 mx-auto flex">
+    <div class="lg:w-1/3 md:w-1/2 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md form-container">
+      <h2 class="text-lg mb-1 font-medium" style="color: #1afdc6;">Feedback</h2>
+      <p class="leading-relaxed mb-5 text-gray-400">Your feedback matters a lot to us. Drop any suggestions, ideas, or anything that we are missing onto...</p>
+      <form action="https://formsubmit.co/8863b602d380d3db911916f0d4c8d275" method="POST">
+        <input type="hidden" name="_autoresponse" value="
+        Thank you for taking the time to share your feedback on my sessional website. Your insights are incredibly valuable to us and help us improve our platform to better serve you and others.
 
-<section class="text-gray-600 body-font relative">
-    <div class="absolute inset-0 bg-gray-300">
-      <iframe width="100%" height="100%" frameborder="0" marginheight="0" marginwidth="0" title="map" scrolling="no" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14412.3919356112!2d81.7531088!3d25.4349875!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399acccbb108cfeb%3A0xbd80419a93ea5550!2sShambhunath%20Institute%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1683424099756!5m2!1sen!2sin" style="filter: grayscale(1) contrast(1.2) opacity(0.4);"></iframe>
-    </div>
-    <div class="container px-5 py-24 mx-auto flex">
-      <div class="lg:w-1/3 md:w-1/2 bg-white rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0 relative z-10 shadow-md">
-        <h2 class="text-gray-900 text-lg mb-1 font-medium title-font">Feedback</h2>
-        <p class="leading-relaxed mb-5 text-gray-600">Your feedbacks matters a lot to us , drop any suggestions,ideas or anything that we are missing onto ...</p>
-        <div class="relative mb-4">
-          <label for="email" class="leading-7 text-sm text-gray-600">Email</label>
-          <input type="email" name="email" placeholder="Email Address" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
-        </div>
-        <div class="relative mb-4">
+We are committed to enhancing your experience and ensuring that the website meets your academic needs efficiently. If you have any additional suggestions or questions, please feel free to reach out to us anytime.
 
-            <form action="https://formsubmit.co/wd51886@gmail.com" method="POST">
-          <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
-          <textarea id="message" name="message" class="w-full bg-white rounded border border-gray-300 focus:border-green-500 focus:ring-2 focus:ring-green-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
-        </div>
-               <button class="text-white bg-green-500 border-0 py-2 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">Send Feedback</button>
-        <p class="text-xs text-gray-500 mt-3">Your feedback help us improve our  product and services.</p>
+Once again, thank you for your input—it truly makes a difference!
+
+Best regards,
+[Harsh Vishwakarma]
+Administrator
+[SIET-EXAMS Website]
         
-    </form>
+        ">
 
-      </div>
+
+        <div class="relative mb-4">
+          <label for="email" class="leading-7 text-sm text-gray-400">Email</label>
+          <input type="email" name="email" placeholder="Email Address" class="w-full input-field rounded py-2 px-3 transition-colors duration-200 ease-in-out">
+        </div>
+        <div class="relative mb-4">
+          <label for="message" class="leading-7 text-sm text-gray-400">Message</label>
+          <textarea id="message" name="message" class="w-full input-field rounded h-32 py-2 px-3 resize-none transition-colors duration-200 ease-in-out"></textarea>
+        </div>
+        <button class="w-full btn-primary py-2 px-6 rounded text-lg font-semibold focus:outline-none transition-all duration-200 ease-in-out">Send Feedback</button>
+        <p class="text-xs text-gray-400 mt-3">Your feedback helps us improve our product and services.</p>
+      </form>
     </div>
-
+  </div>
+</section>
 
 </body>
 </html>

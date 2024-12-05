@@ -1,5 +1,5 @@
 const textElement = document.getElementById("text");
-const message = "Welcome  SIETIANS 👋 ! ";
+const message = "Welcome  SIETIANS !";
 let index = 0;
 let isDeleting = false;
 

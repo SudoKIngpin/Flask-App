@@ -169,29 +169,54 @@ overflow-x:hidden;
 
     }
 
-    .fa:hover {
-      opacity: .7
-    }
+    /* .fa:hover {
+      box-shadow: 0 0px 7px #16d3a5;
+
+    } */
 
     .fa-facebook {
-      background: #3b5998;
+      background: #088cf2;
       color: #fff
     }
+
+    .fa-facebook:hover {
+      box-shadow: 0 0px 10px #088cf2;
+    }
+
+
+
 
     .fa-linkedin {
       background: #007bb5;
       color: #fff
     }
 
+
+    .fa-linkedin:hover{
+      box-shadow: 0 0px 10px #007bb5  ;
+
+      
+    }
     .fa-whatsapp {
       background: #05d340c8;
       color: #fff
+    }
+
+    .fa-whatsapp:hover {
+      box-shadow: 0 0px 10px #03d53ec8;
     }
 
     .fa-youtube {
       background: #b00;
       color: #fff
     }
+
+    .fa-youtube:hover {
+      box-shadow: 0 0px 10px  #b00;
+      
+    }
+
+
 
     .fa-instagram {
       /* color: #fff;
@@ -205,9 +230,19 @@ overflow-x:hidden;
 
     }
 
+    .fa-instagram:hover{
+      box-shadow: 0 0px 10px  #e20d94cb ;
+
+      
+    }
+
     .fa-twitter {
       background: #55acee;
       color: #fff
+    }
+
+    .fa-twitter:hover{
+      box-shadow: 0 0px 10px  #55acee ;
     }
 
 
