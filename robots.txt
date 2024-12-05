@@ -1,0 +1,4 @@
+
+User-agent: *
+Disallow:
+Sitemap: https://siet-exams.onrender.com/sitemap.xml

@@ -1,7 +1,0 @@
-User-agent: Googlebot
-Disallow: /nogooglebot/
-
-User-agent: *
-Allow: /
-
-Sitemap: https://siet-exams.onrender.com/sitemap.xml

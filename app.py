@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, Response
 
 app = Flask(__name__)
 
@@ -74,6 +74,28 @@ YEAR_DATA = {
 
 
 }
+
+
+
+@app.route('/robots.txt')
+def robots_txt():
+    response = Response("User-agent: *\nDisallow:\nSitemap: https://siet-exams.onrender.com/sitemap.xml", mimetype='text/plain')
+    return response
+
+
+
+@app.route('/sitemap.xml')
+def sitemap():
+    sitemap_xml = '''<?xml version="1.0" encoding="UTF-8"?>
+    <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+        <url>
+            <loc>https://siet-exams.onrender.com/</loc>
+            <changefreq>daily</changefreq>
+            <priority>1.0</priority>
+        </url>
+    </urlset>'''
+    response = Response(sitemap_xml, mimetype='application/xml')
+    return response
 
 @app.route('/')
 def home():
