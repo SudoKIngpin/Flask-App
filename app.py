@@ -38,7 +38,7 @@ YEAR_DATA = {
              {"name": "Discrete Maths", "sessional1_link": "/static/papers/1/2nd/dm.jpeg", "sessional2_link": "/static/papers/2/2nd/dm.jpg"},
              {"name": "Operating System", "sessional1_link": "/static/papers/1/2nd/OS.pdf", "sessional2_link": "/static/papers/2/2nd/OS.pdf"},
              {"name": "Human Values", "sessional1_link": "/static/papers/1/2nd/uhv.jpg", "sessional2_link": "/static/papers/2/2nd/uhv.jpg"},
-             {"name": "Python", "sessional1_link": "/static/papers/1/2nd/", "sessional2_link": "/static/papers/2/2nd/"},
+             {"name": "Python", "sessional1_link": "/static/papers/1/2nd/python1.pdf", "sessional2_link": "/static/papers/2/2nd/python2.pdf"},
              {"name": "Java", "sessional1_link": "/static/papers/1/2nd/", "sessional2_link": "/static/papers/2/2nd/"},
              {"name": "Maths - IV", "sessional1_link": "/static/papers/1/2nd/M4.pdf", "sessional2_link": "/static/papers/2/2nd/M4.pdf"}
 
