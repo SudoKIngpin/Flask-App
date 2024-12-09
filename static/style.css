@@ -236,14 +236,25 @@ overflow-x:hidden;
       
     }
 
-    .fa-twitter {
-      background: #55acee;
-      color: #fff
+    .fa-twitter{
+      font-family:sans-serif;
+      background-color:black;
+    }
+    .fa-twitter::before{
+      content:"𝕏";
+      font-size:1.2em;
     }
 
-    .fa-twitter:hover{
-      box-shadow: 0 0px 10px  #55acee ;
+    /* .fa-x {
+      background: hsl(240, 3%, 7%);
+      color: #fff
     }
+*/
+
+    .fa-twitter:hover{
+      box-shadow: 0 0px 10px  white ;
+      
+    } 
 
 
 
