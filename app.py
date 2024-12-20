@@ -56,12 +56,12 @@ YEAR_DATA = {
         "image": "images/3.png",
         "subjects":  [
              
-            {"name": "Web  Technology", "sessional1_link": "/static/papers/1/3rd/Web.pdf", "sessional2_link": "/static/papers/2/3rdnd/"},
-             {"name": "Machine Learning", "sessional1_link": "/static/papers/1/3rd/Ml.jpg", "sessional2_link": "/static/papers/2/3rd/"},
-             {"name": "Data Analytics", "sessional1_link": "/static/papers/1/3rd/DA.jpg", "sessional2_link": "/static/papers/2/3rd/"},
-             {"name": "Algorithms", "sessional1_link": "/static/papers/1/3rd/DAA.pdf", "sessional2_link": "/static/papers/2/3rd/"},
-             {"name": "Constitution", "sessional1_link": "/static/papers/1/3rd/Const.jpg", "sessional2_link": "/static/papers/2/3rd/"}
-         
+             {"name": "Web  Technology", "sessional1_link": "/static/papers/1/3rd/Web.pdf", "sessional2_link": "/static/papers/2/3rd/Web.pdf"},
+             {"name": "Machine Learning", "sessional1_link": "/static/papers/1/3rd/Ml.jpg", "sessional2_link": "/static/papers/2/3rd/ML.pdf"},
+             {"name": "Data Analytics", "sessional1_link": "/static/papers/1/3rd/DA.jpg", "sessional2_link": "/static/papers/2/3rd/DA.pdf"},
+             {"name": "Algorithms", "sessional1_link": "/static/papers/1/3rd/DAA.pdf", "sessional2_link": "/static/papers/2/3rd/DAA.pdf"},
+             {"name": "Constitution", "sessional1_link": "/static/papers/1/3rd/Const.jpg", "sessional2_link": "/static/papers/2/3rd/Const.jpg"},
+             {"name": "DBMS", "sessional1_link": "/static/papers/1/3rd/DBMS.pdf", "sessional2_link": "/static/papers/2/3rd/DBMS.pdf"}         
   ]
   
     },
