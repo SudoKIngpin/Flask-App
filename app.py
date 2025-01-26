@@ -33,13 +33,16 @@ YEAR_DATA = {
         "subjects": [
 
              {"name": "Data Structures", "sessional1_link": "/static/papers/1/2nd/dsa.jpg", "sessional2_link": "/static/papers/2/2nd/dsa.jpg"},
+             {"name": "Automata", "sessional1_link": "/static/papers/1/2nd/", "sessional2_link": "/static/papers/2/2nd/tafl.pdf"},
+             {"name": "Technical Comm.", "sessional1_link": "/static/papers/1/2nd/", "sessional2_link": "/static/papers/2/2nd/tc.pdf"},
+             {"name": "Cyber Security", "sessional1_link": "/static/papers/1/2nd/", "sessional2_link": "/static/papers/2/2nd/cyber.pdf"},
              {"name": "Digital Electronics", "sessional1_link": "/static/papers/1/2nd/de.jpg", "sessional2_link": "/static/papers/2/2nd/de.jpg"},
-             {"name": "Computer Org. & Arch.", "sessional1_link": "/static/papers/1/2nd/coa.jpg", "sessional2_link": "/static/papers/2/2nd/coa.jpg"},
-             {"name": "Discrete Maths", "sessional1_link": "/static/papers/1/2nd/dm.jpeg", "sessional2_link": "/static/papers/2/2nd/dm.jpg"},
+             {"name": "Computer Org. & Arch.", "sessional1_link": "/static/papers/1/2nd/coa.jpg", "sessional2_link": "/static/papers/2/2nd/coa.pdf"},
+             {"name": "Discrete Maths", "sessional1_link": "/static/papers/1/2nd/dm.pdf", "sessional2_link": "/static/papers/2/2nd/dm.jpg"},
              {"name": "Operating System", "sessional1_link": "/static/papers/1/2nd/OS.pdf", "sessional2_link": "/static/papers/2/2nd/OS.pdf"},
              {"name": "Human Values", "sessional1_link": "/static/papers/1/2nd/uhv.jpg", "sessional2_link": "/static/papers/2/2nd/uhv.jpg"},
              {"name": "Python", "sessional1_link": "/static/papers/1/2nd/python1.pdf", "sessional2_link": "/static/papers/2/2nd/python2.pdf"},
-             {"name": "Java", "sessional1_link": "/static/papers/1/2nd/", "sessional2_link": "/static/papers/2/2nd/"},
+             {"name": "Java", "sessional1_link": "/static/papers/1/2nd/", "sessional2_link": "/static/papers/2/2nd/java.pdf"},
              {"name": "Maths - IV", "sessional1_link": "/static/papers/1/2nd/M4.pdf", "sessional2_link": "/static/papers/2/2nd/M4.pdf"}
 
 
