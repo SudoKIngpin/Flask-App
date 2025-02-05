@@ -264,3 +264,127 @@ overflow-x:hidden;
 
 
 /* CSS */
+
+
+
+/* Carousel CSS   */
+/* Container for the carousel */
+.marquee-container {
+  width: 110%;
+  overflow: hidden;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  background: #111827; /* Light background color */
+  padding: 10px 0;
+}
+
+/* Marquee track */
+.marquee {
+  display: flex;
+  gap: 80px; /* Space between images */
+  width: max-content; /* Ensures all images fit horizontally */
+  animation: marquee 15s linear infinite; /* Adjust speed as needed */
+}
+
+/* Images inside the marquee */
+.marquee img {
+  height: 120px; /* Adjust height */
+  width: auto; /* Maintain aspect ratio */
+  max-width: 200px; /* Prevents excessive stretching */
+  object-fit: cover;
+  border: 2px solid #1afdc6;
+  border-radius: 50%; /* Optional rounded corners */
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+.marquee a:hover img {
+  transform: scale(1.18);
+  border: 4px solid #1afdc6;
+
+}
+/* Marquee animation */
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+
+
+
+
+
+/* POpup system  */
+
+/* Popup styling */
+.popup {
+  display: none; /* Hidden by default */
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #111827;
+  border: 3px solid  #1afdc6;
+  padding: 20px;
+  box-shadow: 0 4px 10px #1afdc6;
+  z-index: 1000;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+/* Popup content */
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Close button for popup */
+.popup-close-btn {
+  font-size: 22px;
+  font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  color: #fff;
+}
+
+/* Title and link styling */
+.popup h3 {
+  color: #1afdc6;
+  font-family: monospace;
+  font-size: 24px;
+}
+
+.popup a {
+  color: #1afdc6;
+  text-decoration: underline;
+  margin-top: 15px;
+}
+
+/* Background overlay */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+}
+
+#poptext{
+  font-size: 18px;
+  font-family:system-ui, -apple-system, Ubuntu;
+}
