@@ -62,7 +62,13 @@ YEAR_DATA = {
              {"name": "Data Analytics", "sessional1_link": "/static/papers/1/3rd/DA.jpg", "sessional2_link": "/static/papers/2/3rd/DA.pdf",'sem_link':'https://drive.google.com/uc?export=download&id=1FA0roGNIYeuH_h9ilw2VqFpiiyH7yWpF'},
              {"name": "Algorithms", "sessional1_link": "/static/papers/1/3rd/DAA.pdf", "sessional2_link": "/static/papers/2/3rd/DAA.pdf",'sem_link':'https://drive.google.com/uc?export=download&id=1XOTEYwnV4kZhMVjeuesdfJ-ZJo0ejsEE'},
              {"name": "Constitution", "sessional1_link": "/static/papers/1/3rd/Const.jpg", "sessional2_link": "/static/papers/2/3rd/Const.jpg",'sem_link':'https://drive.google.com/uc?export=download&id=1zyjVf5-1daVz3W9OQCZvkwrqo5waAYa6'},
-             {"name": "DBMS", "sessional1_link": "/static/papers/1/3rd/DBMS.pdf", "sessional2_link": "/static/papers/2/3rd/DBMS.pdf",'sem_link':'https://rzp.io/rzp/dbms3rd'}         
+             {"name": "DBMS", "sessional1_link": "/static/papers/1/3rd/DBMS.pdf", "sessional2_link": "/static/papers/2/3rd/DBMS.pdf",'sem_link':'https://rzp.io/rzp/dbms3rd'},
+             {"name": "Compiler Design", "sessional1_link": "/static/papers/1/3rd/CD1.jpg", "sessional2_link": "/static/papers/2/3rd/CD23.pdf",'sem_link':''},
+             {"name": "Computer Network", "sessional1_link": "/static/papers/1/3rd/", "sessional2_link": "/static/papers/2/3rd/CN3.pdf",'sem_link':''},
+             {"name": "SPM", "sessional1_link": "/static/papers/1/3rd/SPM1.jpg", "sessional2_link": "/static/papers/2/3rd/SPM23.pdf",'sem_link':''},
+             {"name": "Software Engineering", "sessional1_link": "/static/papers/1/3rd/SE1.jpg", "sessional2_link": "/static/papers/2/3rd/SE23.pdf",'sem_link':''},
+             {"name": "Big Data", "sessional1_link": "/static/papers/1/3rd/", "sessional2_link": "/static/papers/2/3rd/BD23.pdf",'sem_link':''},
+
   ]
   
     },
