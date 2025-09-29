@@ -68,9 +68,15 @@ body {
     }
   }
   
-  @media (max-width: 480px) {
-    .card {
-      width: 100%; /* 1 card in a row */
-    }
+@media (max-width: 480px) {
+  .card {
+    width: 100%;
+    /* 1 card in a row */
+  }
+
+  .containeri {
+    display: none;
+  }
+}
   }
   
