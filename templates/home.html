@@ -93,8 +93,16 @@
       </a>
       <nav class="md:ml-auto flex flex-wrap items-center text-base justify-center">
       </nav>
+
+      //Toggle button to switch between dark mode and bright mode
+      
+      <div id="toggle-btn" title="Dark / Bright Mode" aria-label="Toggle Dark Mode">
+        <img src="/static/assets/bright.svg" id="bright" alt="Bright Mode Icon">
+        <img src="/static/assets/dark.svg" id="dark" alt="Dark Mode Icon">
+      </div>
+      
       <button id="feedback-btn"
-        class="text-white bg-green-500 border-0 py-3 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
+        class="flex items-center justify-center rounded-2xl text-white bg-green-500 border-0 py-3 px-6 focus:outline-none hover:bg-green-600 rounded text-lg">
         <a href="/feedback" target="_blank"> message me !
         </a>
         <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
