@@ -101,7 +101,11 @@ img{
    
 
     
-
+@keyframes blinkreact {
+  3% {
+    background-color: #aef9e6;
+  }
+}
 
     #footerpicbox {
       border: 2px solid white;
