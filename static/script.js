@@ -39,3 +39,36 @@ function closePopup() {
     document.getElementById("popup-overlay").style.display = "none";
 }
 
+
+
+
+// Get the toggle button and its icons
+const toggleBtn = document.getElementById('toggle-btn');
+const brightIcon = document.getElementById('bright');
+const darkIcon = document.getElementById('dark');
+const root = document.documentElement;
+
+
+function toggleMode() {
+    // Check if we are currently in bright mode
+    if (brightIcon.style.display !== 'none') {
+        // Switch to dark mode
+        brightIcon.style.display = 'none';
+        darkIcon.style.display = 'block';
+        document.body.style.filter = "invert(1)";
+        document.querySelectorAll('img').forEach(img => img.style.filter = 'invert(1)');
+
+
+    } else {
+        // Switch to bright mode
+        brightIcon.style.display = 'block';
+        darkIcon.style.display = 'none';
+        document.body.style.filter = "invert(0)";
+        document.querySelectorAll('img').forEach(img => img.style.filter = 'invert(0)');
+
+    }
+}
+
+// Add event listener to the toggle button
+toggleBtn.addEventListener('click', toggleMode);
+
