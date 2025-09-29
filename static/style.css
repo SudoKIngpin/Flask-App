@@ -287,8 +287,9 @@ img{
   white-space: nowrap;
   display: flex;
   align-items: center;
-  background: #111827; /* Light background color */
-  padding: 10px 0;
+  background: #111827;
+  /* Light background color */
+  padding: 20px 0;
 }
 
 /* Marquee track */
