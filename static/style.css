@@ -86,26 +86,21 @@ img{
 
 
 
+#reactor {
+  border: 2px solid white;
+  border-radius: 30px;
+  width: 50px;
+  height: 50px;
+  animation: blinkreact 3.4s infinite ease-in;
 
-    #reactor {
-      border: 2px solid white;
-      border-radius: 50%;
 
-      animation: blinkreact 3.4s  infinite ease-in;
+  /* box-shadow: 0px 0px 3px 4px #1afdc6; */
+  /* Horizontal offset, Vertical offset, Blur radius, Spread radius, Color */
 
-
-      /* box-shadow: 0px 0px 3px 4px #1afdc6; */
-      /* Horizontal offset, Vertical offset, Blur radius, Spread radius, Color */
-
-    }
+}
+   
 
     
-    @keyframes blinkreact {
-      3% {
-        background-color: #aef9e6;
-      }
-    }
-
 
 
     #footerpicbox {
