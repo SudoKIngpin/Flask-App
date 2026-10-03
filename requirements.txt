@@ -4,3 +4,4 @@ itsdangerous
 supabase
 python-dotenv
 gunicorn
+requests

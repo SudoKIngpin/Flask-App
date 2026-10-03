@@ -1,7 +1,6 @@
 import os
 import uuid
-import smtplib
-from email.mime.text import MIMEText
+import requests
 from datetime import timedelta
 from functools import wraps
 
@@ -40,16 +39,17 @@ ADMIN_PASSWORD = os.environ.get("ADMIN_PASSWORD", "changeme")
 ALLOWED_EXTENSIONS = {"pdf", "jpg", "jpeg", "png"}
 
 # ---------------------------------------------------------------------------
-# Email setup (for verification + password reset links). Set these as env
-# vars on Render. See SETUP_GUIDE for how to get a Gmail "App Password".
-#   SMTP_HOST (e.g. smtp.gmail.com), SMTP_PORT (e.g. 587)
-#   SMTP_USERNAME, SMTP_PASSWORD, FROM_EMAIL (defaults to SMTP_USERNAME)
+# Email setup (for verification + password reset links), via Brevo's HTTP
+# API instead of SMTP. Render blocks outbound SMTP ports (25/465/587) on
+# free web services, so smtplib never works there regardless of credentials
+# - sending over plain HTTPS (what this does) isn't affected by that block.
+#   BREVO_API_KEY  - from Brevo dashboard -> SMTP & API -> API Keys
+#   FROM_EMAIL     - your Brevo-verified sender address
+#   FROM_NAME      - display name shown to recipients (optional)
 # ---------------------------------------------------------------------------
-SMTP_HOST = os.environ.get("SMTP_HOST", "smtp.gmail.com")
-SMTP_PORT = int(os.environ.get("SMTP_PORT", "587"))
-SMTP_USERNAME = os.environ.get("SMTP_USERNAME")
-SMTP_PASSWORD = os.environ.get("SMTP_PASSWORD")
-FROM_EMAIL = os.environ.get("FROM_EMAIL", SMTP_USERNAME)
+BREVO_API_KEY = os.environ.get("BREVO_API_KEY")
+FROM_EMAIL = os.environ.get("FROM_EMAIL")
+FROM_NAME = os.environ.get("FROM_NAME", "SIET Exams")
 
 serializer = URLSafeTimedSerializer(app.secret_key)
 EMAIL_VERIFY_SALT = "email-verify"
@@ -120,20 +120,31 @@ def login_required(view):
 
 
 def send_email(to_email, subject, html_body):
-    """Sends an email via SMTP. Returns True on success, False if it failed
-    (never raises — a broken email shouldn't break registration/login)."""
-    if not SMTP_USERNAME or not SMTP_PASSWORD:
-        app.logger.warning("Email not sent (SMTP_USERNAME/SMTP_PASSWORD not set): %s", subject)
+    """Sends an email via Brevo's HTTP API (not SMTP - see note above).
+    Returns True on success, False if it failed (never raises - a broken
+    email shouldn't break registration/login)."""
+    if not BREVO_API_KEY or not FROM_EMAIL:
+        app.logger.warning("Email not sent (BREVO_API_KEY/FROM_EMAIL not set): %s", subject)
         return False
     try:
-        msg = MIMEText(html_body, "html")
-        msg["Subject"] = subject
-        msg["From"] = FROM_EMAIL
-        msg["To"] = to_email
-        with smtplib.SMTP(SMTP_HOST, SMTP_PORT) as server:
-            server.starttls()
-            server.login(SMTP_USERNAME, SMTP_PASSWORD)
-            server.sendmail(FROM_EMAIL, [to_email], msg.as_string())
+        response = requests.post(
+            "https://api.brevo.com/v3/smtp/email",
+            headers={
+                "accept": "application/json",
+                "api-key": BREVO_API_KEY,
+                "content-type": "application/json",
+            },
+            json={
+                "sender": {"name": FROM_NAME, "email": FROM_EMAIL},
+                "to": [{"email": to_email}],
+                "subject": subject,
+                "htmlContent": html_body,
+            },
+            timeout=10,
+        )
+        if response.status_code >= 400:
+            app.logger.error("Brevo send failed (%s): %s", response.status_code, response.text)
+            return False
         return True
     except Exception as e:
         app.logger.error("Failed to send email to %s: %s", to_email, e)
