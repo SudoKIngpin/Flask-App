@@ -21,11 +21,18 @@
         <a href="{{ url_for('upload') }}">Upload Paper</a>
         <a href="{{ url_for('logout') }}">Logout</a>
       {% else %}
+
+
+
         <a href="{{ url_for('login') }}">Login</a>
         <a class="signup-hover"
            style="background:#2dd9a8; color:#04150f; font-weight:600; padding:8px 18px;
                   border-radius:8px; text-decoration:none; font-size:0.9rem;" href="{{ url_for('register') }}">Sign up</a>
       {% endif %}
+
+
+      <a href="{{ url_for('feedback') }}" target="_blank" rel="noopener" style="border:1px solid #2dd9a8; color:#2dd9a8; font-weight:600; padding:7px 16px;
+          border-radius:8px; text-decoration:none; font-size:0.9rem;">💬 Feedback</a>
     </div>
   </nav>
 
