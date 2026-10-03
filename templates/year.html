@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block title %}{{ meta.title }} - SIET Exams{% endblock %}
+{% block content %}
+
+<div class="year-header">
+  <div class="year-badge">{{ meta.number }}</div>
+  <div>
+    <h1 style="margin-bottom:4px">{{ meta.title }}</h1>
+    <p style="color:var(--text-dim); margin:0">{{ meta.description }}</p>
+  </div>
+</div>
+
+<p style="margin-top:30px"><a href="{{ url_for('home') }}">&larr; Back to dashboard</a></p>
+
+<div class="subject-grid">
+  {% for s in subjects %}
+  <div class="card subject-card">
+    <h4>{{ s.name }}</h4>
+
+    {% if s.sessional1_link %}
+      <a class="paper-btn available" href="{{ s.sessional1_link }}" target="_blank" rel="noopener">Sessional 1</a>
+    {% else %}
+      <span class="paper-btn unavailable">Sessional 1 : not uploaded yet</span>
+    {% endif %}
+
+    {% if s.sessional2_link %}
+      <a class="paper-btn available" href="{{ s.sessional2_link }}" target="_blank" rel="noopener">Sessional 2</a>
+    {% else %}
+      <span class="paper-btn unavailable">Sessional 2 : not uploaded yet</span>
+    {% endif %}
+
+    {% if s.semester_link %}
+      <a class="paper-btn available" href="{{ s.semester_link }}" target="_blank" rel="noopener">Semester</a>
+    {% else %}
+      <span class="paper-btn unavailable">Semester : not uploaded yet</span>
+    {% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+<div class="card upload-banner" style="margin-top:32px">
+  <div>
+    <h3>Missing a paper here?</h3>
+    <p>If you have it, upload it — you'll be helping the next batch too.</p>
+  </div>
+  <a class="btn" href="{{ url_for('upload') }}">Upload a Paper</a>
+</div>
+
+{% endblock %}

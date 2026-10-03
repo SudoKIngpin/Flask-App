@@ -1,0 +1,6 @@
+Flask
+Werkzeug
+itsdangerous
+supabase
+python-dotenv
+gunicorn

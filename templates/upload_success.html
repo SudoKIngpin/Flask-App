@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block title %}Uploaded - SIET Exams{% endblock %}
+{% block content %}
+<div class="auth-wrap" style="text-align:center">
+  <h1>✅ Thanks! Your paper was submitted.</h1>
+  <p class="sub">It'll show up on the site once it's reviewed — usually quick.</p>
+  <a class="btn" href="{{ url_for('upload') }}">Upload another</a>
+  &nbsp;
+  <a class="btn btn-outline" href="{{ url_for('home') }}">Back to dashboard</a>
+</div>
+{% endblock %}

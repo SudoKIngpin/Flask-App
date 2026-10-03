@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}Login - SIET Exams{% endblock %}
+{% block content %}
+<div class="auth-wrap">
+  <h1>Welcome back, SIETIAN !</h1>
+  <p class="sub">Log in to view and upload exam papers.</p>
+  <form method="POST">
+    <label for="student_id">Student ID</label>
+    <input type="text" name="student_id" id="student_id" required autofocus>
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" required>
+
+    <button class="btn btn-block" style="margin-top:22px" type="submit">Login</button>
+  </form>
+  <p class="auth-switch"><a href="{{ url_for('forgot_password') }}">Forgot password?</a></p>
+  <p class="auth-switch">New here? <a href="{{ url_for('register') }}">Create an account</a></p>
+</div>
+{% endblock %}

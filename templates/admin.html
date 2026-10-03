@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}Pending Uploads - Admin{% endblock %}
+{% block content %}
+
+<div style="display:flex; justify-content:space-between; align-items:center">
+  <h1>Pending Uploads ({{ pending|length }})</h1>
+  <a href="{{ url_for('admin_logout') }}">Logout</a>
+</div>
+
+{% if not pending %}
+  <p class="empty-state">Nothing pending. 🎉</p>
+{% else %}
+<div class="card">
+<table>
+  <tr><th>Year</th><th>Subject</th><th>Type</th><th>Uploaded by</th><th>File</th><th>Actions</th></tr>
+  {% for p in pending %}
+  <tr>
+    <td>{{ p.year }}</td>
+    <td>{{ p.subject }}</td>
+    <td>{{ exam_type_labels.get(p.exam_type, p.exam_type) }}</td>
+    <td>{{ p.uploaded_by or '—' }}</td>
+    <td><a href="{{ p.file_url }}" target="_blank" rel="noopener">View file</a></td>
+    <td style="white-space:nowrap">
+      <form style="display:inline" method="POST" action="{{ url_for('admin_approve', paper_id=p.id) }}">
+        <button class="btn" style="padding:6px 12px; font-size:0.8rem" type="submit">Approve</button>
+      </form>
+      <form style="display:inline" method="POST" action="{{ url_for('admin_reject', paper_id=p.id) }}"
+            onsubmit="return confirm('Delete this upload?');">
+        <button class="btn btn-danger" style="padding:6px 12px; font-size:0.8rem" type="submit">Reject</button>
+      </form>
+    </td>
+  </tr>
+  {% endfor %}
+</table>
+</div>
+{% endif %}
+
+{% endblock %}

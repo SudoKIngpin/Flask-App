@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+{% block title %}Register - SIET Exams{% endblock %}
+{% block content %}
+<div class="auth-wrap">
+  <h1>Create your account</h1>
+  <p class="sub">Takes 20 seconds. You'll stay logged in on this browser.</p>
+  <form method="POST">
+    <label for="student_id">Student ID / Roll No.</label>
+    <input type="text" name="student_id" id="student_id" required autofocus>
+
+    <label for="email">Email</label>
+    <input type="email" name="email" id="email" required>
+
+    <label for="mobile_number">Mobile Number</label>
+    <input type="tel" name="mobile_number" id="mobile_number" required>
+
+    <label for="password">Password</label>
+    <input type="password" name="password" id="password" minlength="6" required>
+
+    <label for="confirm_password">Confirm Password</label>
+    <input type="password" name="confirm_password" id="confirm_password" minlength="6" required>
+
+    <button class="btn btn-block" style="margin-top:22px" type="submit">Create Account</button>
+  </form>
+  <p class="auth-switch">Already registered? <a href="{{ url_for('login') }}">Log in</a></p>
+</div>
+{% endblock %}

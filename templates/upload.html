@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+{% block title %}Upload a Paper - SIET Exams{% endblock %}
+{% block content %}
+
+<div class="auth-wrap" style="max-width:460px">
+  <h1>Upload an Exam Paper</h1>
+  <p class="sub">Thanks for helping out — your file will be reviewed before it goes live.</p>
+
+  <form method="POST" enctype="multipart/form-data">
+    <label for="year">Year</label>
+    <select name="year" id="year" required onchange="updateSubjects()">
+      <option value="" disabled selected>Select year</option>
+      {% for y, meta in year_meta.items() %}
+        <option value="{{ y }}">{{ meta.title }}</option>
+      {% endfor %}
+    </select>
+
+    <label for="subject">Subject</label>
+    <select name="subject" id="subject" required>
+      <option value="" disabled selected>Select year first</option>
+    </select>
+
+    <label for="exam_type">Exam Type</label>
+    <select name="exam_type" id="exam_type" required>
+      <option value="" disabled selected>Select exam type</option>
+      {% for et in exam_types %}
+        <option value="{{ et }}">{{ exam_type_labels[et] }}</option>
+      {% endfor %}
+    </select>
+
+    <label for="paper">File (PDF, JPG, or PNG)</label>
+    <input type="file" name="paper" id="paper" accept=".pdf,.jpg,.jpeg,.png" required>
+
+    <button class="btn btn-block" style="margin-top:22px" type="submit">Upload Paper</button>
+  </form>
+</div>
+
+<script>
+  const subjectsByYear = {
+    {% for y, meta in year_meta.items() %}
+      "{{ y }}": [{% for s in meta.subjects %}"{{ s }}"{% if not loop.last %},{% endif %}{% endfor %}],
+    {% endfor %}
+  };
+
+  function updateSubjects() {
+    const year = document.getElementById('year').value;
+    const subjectSelect = document.getElementById('subject');
+    subjectSelect.innerHTML = '';
+    (subjectsByYear[year] || []).forEach(function(s) {
+      const opt = document.createElement('option');
+      opt.value = s;
+      opt.textContent = s;
+      subjectSelect.appendChild(opt);
+    });
+  }
+</script>
+{% endblock %}

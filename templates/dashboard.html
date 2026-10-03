@@ -1,0 +1,111 @@
+{% extends "base.html" %}
+{% block title %}Dashboard - SIET Exams{% endblock %}
+{% block content %}
+
+<div id="announcement-banner" style="display:none; background:rgba(23,185,143,0.08); border:1px solid #17b98f; border-radius:8px; padding:10px 14px; margin-bottom:20px; align-items:center; justify-content:space-between; gap:12px; flex-wrap:nowrap;">
+  <span style="color:#c9d2e3; font-size:0.82rem; line-height:1.4;">
+    📢 <strong style="color:#2dd9a8;">Site Update:</strong> We've upgraded the site , need fellow SIETians to help upload the latest sessional and semester exam papers 🙏
+  </span>
+  <button
+    onclick="document.getElementById('announcement-banner').style.display='none'; localStorage.setItem('siet_announcement_v1','dismissed');"
+    style="background:none; border:none; color:#8d97ad; font-size:1.1rem; cursor:pointer; line-height:1; padding:0 4px; flex-shrink:0;"
+    aria-label="Dismiss announcement">
+    &times;
+  </button>
+</div>
+
+<script>
+  if (localStorage.getItem('siet_announcement_v1') !== 'dismissed') {
+    document.getElementById('announcement-banner').style.display = 'flex';
+  }
+</script>
+
+
+
+
+
+
+
+<!-- <h1>Shambhunath Institute of Engineering &amp; Technology</h1> -->
+<p style="color:var(--text-dim)">B.Tech CSE &middot; Exam Paper Archive
+  <span style="color:#2dd9a8; font-family:'Space Grotesk', monospace; font-size:0.7rem; letter-spacing:0.5px; margin-left:10px;">
+    | SIET EXAMS &copy; |
+  </span>
+</p>
+<div style="text-align:left; margin:6px 0 20px;">
+  <a href="{{ url_for('home') }}" style="display:inline-flex; align-items:center; gap:6px; text-decoration:none;">
+    <img src="{{ url_for('static', filename='assets/logo.png') }}" alt="logo" style="height:22px; width:22px; border-radius:50%; object-fit:cover;">
+    <span style="color:#8d97ad; font-size:0.78rem;">Shambhunath Institute Of Engineering &amp; Technology</span>
+  </a>
+</div>
+
+{% if not email_verified %}
+<div class="flash" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px">
+  <span>⚠️ Your email isn't verified yet — you can browse papers, but you'll need to verify before uploading.</span>
+  <a class="btn btn-outline" style="padding:6px 14px; font-size:0.85rem" href="{{ url_for('resend_verification') }}">Resend verification email</a>
+</div>
+{% endif %}
+
+
+<h2 style="text-align:center; margin-bottom:20px; text-decoration:overline; font-family:'Space Grotesk', monospace; color:#2dd9a8; font-weight:500; font-size:1.1rem;">
+  // CSE Saviours //
+</h2>
+
+<div style="overflow:hidden; width:100%; margin-bottom:36px;">
+  <div style="display:flex; gap:28px; width:max-content; animation: siet-marquee-scroll 32s linear infinite;">
+    {% for ch in [
+      ("BREVI", "https://www.youtube.com/@brevilearning", "https://yt3.googleusercontent.com/QmbPgcZhmEpSSEG5BuQQdLCVO0jR01qimLs08F49ndpXRjz1un5bE_7Gt2ISFdFmlc7sKhI3=s160-c-k-c0x00ffffff-no-rj"),
+      ("Gate Smashers", "https://www.youtube.com/@GateSmashers", "https://yt3.googleusercontent.com/ytc/AIdro_mZfqpNqtGLksLQfMbW7UVFgub_poGNE-YU_RAoV_NdUII=s176-c-k-c0x00ffffff-no-rj-mo"),
+      ("CodeWithHarry", "https://www.youtube.com/@CodeWithHarry", "https://yt3.googleusercontent.com/ytc/AIdro_kX3sdbuu3KFmRPsmlu0R5Rx_BhpxwupjtvJmkEdNfla7w=s160-c-k-c0x00ffffff-no-rj"),
+      ("University Academy", "https://www.youtube.com/@UniversityAcademy", "https://yt3.googleusercontent.com/ytc/AIdro_kurYAox-5YpLsTVvVK_6S2G1JAraSjMyfoWUzXiRvzpZ8=s160-c-k-c0x00ffffff-no-rj"),
+      ("Gateway Classes", "https://www.youtube.com/@gatewayclasses", "https://yt3.googleusercontent.com/54oexlqBswqqqtcb3l4OiZzRyJTqXMEC2ZDc8MK6L9UBlcqqSm_uqlSCcPj3IDpF6dIBoLeE5g4=s160-c-k-c0x00ffffff-no-rj"),
+      ("Jenny's Lectures", "https://www.youtube.com/c/JennyslecturesCSIT", "https://yt3.ggpht.com/G_0IAqOglBkQz1-AFWsxxiRrT7DjPfrQksCMs-I82D6wCOrG1PCa9LjntW9zW5TodRLccBr6ew=s176-c-k-c0x00ffffff-no-rj-mo"),
+      ("ITech World AKTU", "https://www.youtube.com/@itechworldxrt", "https://yt3.googleusercontent.com/pBNPs1Yf1eEAvHy57ir61EEeL0XSXZRm28FP9cXfqS0PSGn8b5xhiKrYlEAKE-o27kzfF4RXPw=s160-c-k-c0x00ffffff-no-rj"),
+      ("Engineering Maths", "https://www.youtube.com/@SAURABHDAHIVADKAR", "https://yt3.googleusercontent.com/ytc/AIdro_kXfL1dC3a1tYXXYTi0GIHlZJJtqkxmo8lhHWsaCopbwU4=s160-c-k-c0x00ffffff-no-rj"),
+      ("Knowledge Gate", "https://www.youtube.com/@KNOWLEDGEGATE_kg", "https://yt3.googleusercontent.com/pFpFKk20uILknx5JnO9-LsSDh4Vs6TRum0U-iV_7AdMz-ZhlhM93JbzTIsDAGTsehuBo5IO1=s160-c-k-c0x00ffffff-no-rj"),
+      ("Free Code Camp", "https://www.youtube.com/@freecodecamp", "https://yt3.googleusercontent.com/ytc/AIdro_lGRc-05M2OoE1ejQdxeFhyP7OkJg9h4Y-7CK_5je3QqFI=s160-c-k-c0x00ffffff-no-rj"),
+      ("Geeks4Geeks", "https://www.youtube.com/@GeeksforGeeksVideos", "https://yt3.googleusercontent.com/dQfBGzscI39pcxJC7ywUkslmJZ4AHyh0eECVkbnyW4zBN1djj5TCNLXx1Pf68WqRlrzMRbjS=s160-c-k-c0x00ffffff-no-rj"),
+    ] * 2 %}
+      <a href="{{ ch[1] }}" target="_blank" rel="noopener" title="{{ ch[0] }}">
+        <img src="{{ ch[2] }}" alt="{{ ch[0] }}" style="width:60px; height:60px; border-radius:50%; object-fit:cover; border:2px solid #232b40; flex-shrink:0;">
+      </a>
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  /* Keyframe animation can't be done via inline style="" - scoped here same as the footer hover trick */
+  @keyframes siet-marquee-scroll {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+</style>
+
+<div class="card upload-banner">
+  <div>
+    <h3>Got a paper from a recent exam?</h3>
+    <p>Upload it in 30 seconds , it'll be reviewed and added for everyone.</p>
+  </div>
+  <a class="btn" href="{{ url_for('upload') }}">Upload a Paper</a>
+</div>
+
+<div class="year-grid">
+  {% for key, meta in year_meta.items() %}
+  <div class="card year-card">
+    <h3>{{ meta.title.replace(' Papers', '') }}</h3>
+    <p>{{ meta.description }}</p>
+    <a class="btn btn-block" href="{{ url_for('papers', year=key) }}">Exam Papers</a>
+  </div>
+  {% endfor %}
+</div>
+
+
+
+
+<!-- <a href="{{ url_for('feedback') }}" target="_blank" rel="noopener"
+   style="position:fixed; bottom:20px; right:20px; background:#25D366; color:#fff; width:52px; height:52px; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:1.5rem; box-shadow:0 4px 14px rgba(0,0,0,0.4); z-index:999; text-decoration:none;"
+   aria-label="Send feedback on WhatsApp">
+  <i class="fa-brands fa-whatsapp"></i>
+</a> -->
+
+{% endblock %}

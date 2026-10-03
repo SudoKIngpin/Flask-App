@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{% block title %}SIET Exams{% endblock %}</title>
+  <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/favicon.png') }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <nav class="navbar">
+    <!-- <a class="brand" href="{{ url_for('home') }}">SIET <span>EXAMS</span></a> -->
+    <a class="brand" href="{{ url_for('home') }}" style="display:flex; align-items:center; gap:10px;">
+  <img src="{{ url_for('static', filename='assets/reactor.jpg') }}" alt="SIET Exams logo" style="width:32px; height:32px; border-radius:50%; object-fit:cover;">
+  SIET <span>EXAMS</span>
+  </a>
+    <div class="nav-right">
+      {% if session.get('student_id') %}
+        <span>👨‍💻 {{ session.get('student_id') }}</span>
+        <a href="{{ url_for('upload') }}">Upload Paper</a>
+        <a href="{{ url_for('logout') }}">Logout</a>
+      {% else %}
+        <a href="{{ url_for('login') }}">Login</a>
+        <a class="signup-hover"
+           style="background:#2dd9a8; color:#04150f; font-weight:600; padding:8px 18px;
+                  border-radius:8px; text-decoration:none; font-size:0.9rem;" href="{{ url_for('register') }}">Sign up</a>
+      {% endif %}
+    </div>
+  </nav>
+
+  <div class="container">
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        {% for m in messages %}
+          <div class="flash">{{ m }}</div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}{% endblock %}
+  </div>
+
+  <footer style="padding:20px 32px; border-top:1px solid #232b40; color:#8d97ad; font-size:0.85rem;">
+    <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px; max-width:1080px; margin:0 auto;">
+
+      <div style="display:flex; align-items:center; gap:14px;">
+        <img
+          src="/static/assets/dev.jpg"
+          alt="Harsh"
+          style="width:44px; height:44px; border-radius:50%; object-fit:cover; border:2px solid #17b98f; flex-shrink:0;"
+        >
+        <span>
+          <a href="https://instagram.com/harsh_v03" target="_blank" rel="noopener" class="footer-hover"
+             style="display:block; color:#2dd9a8; font-weight:600; font-size:0.95rem; text-decoration:underline;">Harsh</a>
+          </span>
+
+          <span style="display:block; font-size:0.82rem; color:#8d97ad; margin-top:2px;">
+            Made with <span style="color:#ff5a6e;">&#9829;</span> by Sudo &copy; 2026
+            <!-- <strong style="color:#e6ebf5; font-weight:600;">@Harsh V.</strong> -->
+          </span>
+        </span>
+      </div>
+
+      <div style="display:flex; gap:18px; font-size:1.15rem;">
+        <a href="https://github.com/SudoKIngpin" target="_blank" rel="noopener" aria-label="GitHub" class="footer-hover" style="color:#8d97ad;"><i class="fa-brands fa-github"></i></a>
+        <a href="#" target="_blank" rel="noopener" aria-label="Twitter" class="footer-hover" style="color:#8d97ad;"><i class="fa-brands fa-x-twitter"></i></a>
+        <a href="https://instagram.com/harsh_v03" target="_blank" rel="noopener" aria-label="Instagram" class="footer-hover" style="color:#8d97ad;"><i class="fa-brands fa-instagram"></i></a>
+        <a href="https://linkedin.com/harsh-vk777" target="_blank" rel="noopener" aria-label="LinkedIn" class="footer-hover" style="color:#8d97ad;"><i class="fa-brands fa-linkedin"></i></a>
+      </div>
+
+    </div>
+    <!-- <div style="text-align:center; margin-top:14px; font-size:0.8rem;">
+      <a href="{{ url_for('feedback') }}" class="footer-hover" style="color:#8d97ad;">Feedback</a>
+    </div> -->
+  </footer>
+
+  <style>
+    /* Scoped just to footer links - hover can't be done with inline style="" alone */
+    .footer-hover:hover { color: #2dd9a8 !important; text-decoration: none; }
+  </style>
+</body>
+</html>
